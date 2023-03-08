@@ -74,8 +74,10 @@ function getCarIdFromInputField() {
 async function fetchCar(id) {
   setStatusMsg("", false)
   try {
+    document.getElementById("spinner").style.display = "block"
     const URL_FOR_ADMIN = URL + "/admin"
     const car = await fetch(URL_FOR_ADMIN + "/" + id).then(handleHttpErrors)
+    document.getElementById("spinner").style.display = "none"
     renderCar(car)
     setInfoText("Edit values and press 'Submit changes' or delete if needed")
   } catch (err) {

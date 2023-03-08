@@ -5,7 +5,9 @@ const URL = API_URL + "/cars/admin"
 
 export async function initCars() {
   try {
+    document.getElementById("spinner").style.display = "block"
     const cars = await fetch(URL).then(handleHttpErrors)
+    document.getElementById("spinner").style.display = "none"
     document.getElementById("table-rows").onclick = gotoToAddEditView
     const carRows = cars.map(car => `
   <tr>
