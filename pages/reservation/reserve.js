@@ -73,8 +73,7 @@ async function reserveCar() {
     setStatusMsg("Car was succesfully reserved, enter a new date, or press close", false)
 
   } catch (ex) {
-    const errorMsg = ex.apiError ? ex.apiError.message : ex.message
-    setStatusMsg(errorMsg, true)
+    setStatusMsg(ex.message, true)
   }
 }
 

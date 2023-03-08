@@ -83,13 +83,9 @@ async function fetchCar(id) {
     renderCar(car)
     setInfoText("Edit values and press 'Submit changes' or delete if needed")
   } catch (err) {
-    if (err.apiError) {
-      setStatusMsg(err.apiError.message, true)
-    } else {
-      setStatusMsg(err.message + FETCH_NO_API_ERROR, true)
-      console.log(err.message + FETCH_NO_API_ERROR)
+    document.getElementById("spinner").style.display = "none"
+       setStatusMsg(err.message, true)
     }
-  }
 }
 
 /**
