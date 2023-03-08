@@ -12,7 +12,9 @@ export function initMembers() {
 
 async function getAllMembers() {
   try {
+    document.getElementById("spinner").style.display = "block"
     const usersFromServer = await fetch(URL).then(handleHttpErrors)
+    document.getElementById("spinner").style.display = "none"
     showAllData(usersFromServer)
   }
   catch (err) {

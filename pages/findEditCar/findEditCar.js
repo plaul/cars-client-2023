@@ -12,6 +12,8 @@ let carInputPricePrDay
 let carInputDiscount
 
 export async function initFindEditCar(match) {
+
+  document.getElementById("spinner").style.display = "none"
   document.getElementById("btn-fetch-car").onclick = getCarIdFromInputField
   document.getElementById("btn-submit-edited-car").onclick = submitEditedCar
   document.getElementById("btn-delete-car").onclick = deleteCar;

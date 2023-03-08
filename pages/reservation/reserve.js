@@ -16,7 +16,9 @@ export async function initReservation() {
   carReservationDate = document.getElementById("reservation-date")
 
   try {
+    document.getElementById("spinner").style.display = "block"
     const cars = await fetch(URL).then(handleHttpErrors)
+    document.getElementById("spinner").style.display = "none"
     document.getElementById("table-rows").onclick = setupReservationModal
     const carRows = cars.map(car => `
   <tr>
